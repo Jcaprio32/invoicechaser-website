@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -519,7 +518,9 @@
       margin-top: auto;
     }
 
-    .pricing-cta button {
+    /* style anchors inside pricing CTA as buttons */
+    .pricing-cta a {
+      display: block;
       width: 100%;
       padding: 0.6rem 0.8rem;
       border-radius: 999px;
@@ -527,6 +528,7 @@
       font-size: 0.86rem;
       cursor: pointer;
       font-weight: 500;
+      text-align: center;
     }
 
     .pricing-cta .primary {
@@ -953,11 +955,13 @@
           </div>
 
           <div class="pricing-grid">
-            <!-- SOLO CONTRACTOR -->
+            <!-- Solo Contractor -->
             <div class="pricing-card">
               <div>
                 <div class="pricing-name">Solo Contractor</div>
-                <div class="pricing-price">$20<span class="pricing-period">/month</span></div>
+                <div class="pricing-price">
+                  $20<span class="pricing-period">/month</span>
+                </div>
                 <p class="pricing-desc">
                   For self-employed contractors and consultants who invoice a handful of
                   clients each month.
@@ -970,23 +974,27 @@
                 </ul>
               </div>
               <div class="pricing-cta">
-                <button
-                  class="secondary"
-                  onclick="window.location.href='https://buy.stripe.com/dRm5kD6X9g8zgnhcuz5kk01';"
+                <a
+                  class="primary"
+                  href="https://buy.stripe.com/dRm5kD6X9g8zgnhcuz5kk01"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Start Solo Contractor
-                </button>
+                </a>
               </div>
             </div>
 
-            <!-- SMALL TEAM -->
+            <!-- Growing Team -->
             <div class="pricing-card highlight">
               <div>
                 <div class="pricing-name">
-                  Small Team
+                  Growing Team
                   <span class="pricing-pill">Most popular</span>
                 </div>
-                <div class="pricing-price">$59<span class="pricing-period">/month</span></div>
+                <div class="pricing-price">
+                  $59<span class="pricing-period">/month</span>
+                </div>
                 <p class="pricing-desc">
                   For small teams with recurring clients and steady invoicing volume.
                   Best balance of volume and control.
@@ -1000,20 +1008,24 @@
                 </ul>
               </div>
               <div class="pricing-cta">
-                <button
+                <a
                   class="primary"
-                  onclick="window.location.href='https://buy.stripe.com/eVq7sL81d7C33Avbqv5kk00';"
+                  href="https://buy.stripe.com/eVq7sL81d7C33Avbqv5kk00"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Start Small Team
-                </button>
+                  Start Growing Team
+                </a>
               </div>
             </div>
 
-            <!-- CUSTOM -->
+            <!-- High volume -->
             <div class="pricing-card">
               <div>
                 <div class="pricing-name">High Volume / Multi-entity</div>
-                <div class="pricing-price">Custom<span class="pricing-period">/month</span></div>
+                <div class="pricing-price">
+                  Custom<span class="pricing-period">/month</span>
+                </div>
                 <p class="pricing-desc">
                   For higher-volume operations that need multi-brand setups, special
                   workflows, or tighter integration.
@@ -1026,9 +1038,9 @@
                 </ul>
               </div>
               <div class="pricing-cta">
-                <button class="secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">
+                <a class="secondary" href="#contact">
                   Discuss custom setup
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -1122,7 +1134,7 @@
               </p>
               <p class="contact-meta">
                 <strong>Email:</strong>
-                <a href="mailto:caprioholdingsllc@gmail.com">caprioholdingsllc@gmail.com</a>
+                <a href="mailto:support@getinvoicechaser.com">support@getinvoicechaser.com</a>
               </p>
               <p class="contact-meta">
                 <strong>Location:</strong> Overland Park, Kansas City (serving clients nationwide)
@@ -1136,8 +1148,8 @@
             <div class="contact-form">
               <div class="contact-note">
                 This is a preview of the intake form we’ll eventually wire into the
-                live system. For now, you can copy these prompts and send them by
-                email if you’d like to get a head start.
+                live system. For now, you can send these details directly by email
+                and we’ll follow up.
               </div>
 
               <div class="form-row">
@@ -1183,7 +1195,7 @@
                 ></textarea>
               </div>
 
-              <button type="button">
+              <button type="button" onclick="emailIntakeForm()">
                 Copy these questions & email them
               </button>
             </div>
@@ -1208,6 +1220,40 @@
   <script>
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Build an email with the intake info and open the user's mail client
+    function emailIntakeForm() {
+      const name = document.getElementById("name").value.trim();
+      const company = document.getElementById("company").value.trim();
+      const workEmail = document.getElementById("email").value.trim();
+      const system = document.getElementById("system").value.trim();
+      const volume = document.getElementById("volume").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const to = "support@getinvoicechaser.com";
+      const subject = encodeURIComponent(
+        "New InvoiceChaser inquiry from " + (name || "website visitor")
+      );
+
+      const bodyLines = [
+        "Name: " + name,
+        "Company: " + company,
+        "Work email: " + workEmail,
+        "Current invoicing system: " + system,
+        "Approx. invoices sent per month: " + volume,
+        "",
+        "Biggest headache they want to solve:",
+        message,
+        "",
+        "---",
+        "Submitted via getinvoicechaser.com contact form."
+      ];
+
+      const body = encodeURIComponent(bodyLines.join("\n"));
+      const mailto = "mailto:" + to + "?subject=" + subject + "&body=" + body;
+
+      window.location.href = mailto;
+    }
   </script>
 </body>
 </html>
