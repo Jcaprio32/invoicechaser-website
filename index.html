@@ -357,6 +357,32 @@
       max-width: 34rem;
     }
 
+    /* Pain section */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .pain-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 0.9rem 1rem;
+    }
+
+    .pain-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .pain-card p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
     /* How it works */
     .steps-grid {
       display: grid;
@@ -714,7 +740,8 @@
       .steps-grid,
       .features-grid,
       .pricing-grid,
-      .faq-grid {
+      .faq-grid,
+      .pain-grid {
         grid-template-columns: minmax(0, 1fr);
       }
       .contact-layout {
@@ -753,7 +780,7 @@
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
           <a href="#contact" class="nav-cta">
-            <span>Book a walkthrough</span>
+            <span>Contact</span>
           </a>
         </nav>
       </div>
@@ -766,28 +793,26 @@
           <div>
             <div class="hero-kicker">
               <span class="hero-kicker-dot"></span>
-              Built to sit next to QuickBooks & Wave
+              Built for contractors, freelancers, and small teams
             </div>
             <h1 class="hero-title">
-              Automated invoice reminders that feel
-              <span class="hero-highlight">human</span>—not harassing.
+              Turn it on. <span class="hero-highlight">Get paid.</span>
             </h1>
             <p class="hero-subtitle">
-              InvoiceChaser plugs into the way you already bill clients and
-              quietly handles overdue follow-ups, so you can stop chasing
-              payments and focus on work that actually pays you.
+              Stop wasting hours chasing clients for money. InvoiceChaser plugs into the way
+              you already bill and quietly handles overdue reminders—so you get paid on time
+              without awkward follow-ups.
             </p>
             <div class="hero-actions">
-              <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">
-                Schedule a 15-minute demo
+              <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'});">
+                Start getting paid faster
               </button>
               <button class="btn-secondary" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'});">
                 See how it works
               </button>
             </div>
             <p class="hero-footnote">
-              <strong>No new accounting system.</strong> You keep using
-              QuickBooks or Wave. We just make sure invoices get paid.
+              <strong>No new accounting system.</strong> You keep using QuickBooks or Wave. One recovered invoice a month usually covers the subscription.
             </p>
           </div>
 
@@ -834,6 +859,47 @@
         </div>
       </section>
 
+      <!-- PAIN SECTION -->
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">The problem</div>
+            <h2 class="section-title">Late invoices quietly crush your time and cash flow</h2>
+            <p class="section-subtitle">
+              You didn’t start your business to chase people who already owe you money. But every overdue invoice
+              steals time, energy, and focus from the work that actually grows your business.
+            </p>
+          </div>
+
+          <div class="pain-grid">
+            <div class="pain-card">
+              <h3>Time you never get back</h3>
+              <p>
+                Manually sending reminder emails or texts eats hours every month—hours you could spend on billable work.
+              </p>
+            </div>
+            <div class="pain-card">
+              <h3>Awkward follow-ups</h3>
+              <p>
+                Contractors can be direct. Freelancers often feel guilty even asking to be paid. Either way, chasing money is uncomfortable.
+              </p>
+            </div>
+            <div class="pain-card">
+              <h3>Clients ignore “just checking in” emails</h3>
+              <p>
+                They don’t ignore the work—you already did that. They ignore generic reminders that don’t make payment easy or urgent.
+              </p>
+            </div>
+            <div class="pain-card">
+              <h3>Cash flow delays stall everything</h3>
+              <p>
+                Late payments make it harder to invest, hire, or even breathe confidently about next month. Reliable follow-up changes that.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- HOW IT WORKS -->
       <section id="how-it-works">
         <div class="container">
@@ -841,36 +907,34 @@
             <div class="section-eyebrow">How it works</div>
             <h2 class="section-title">Sits quietly beside your accounting software</h2>
             <p class="section-subtitle">
-              No new system to learn. You keep using your existing invoicing
-              tool—InvoiceChaser automates the part everyone hates: overdue follow-ups.
+              No new system to learn. You keep using your existing invoicing tool—InvoiceChaser automates the part
+              everyone hates: overdue follow-ups.
             </p>
           </div>
 
           <div class="steps-grid">
             <div class="step-card">
               <div class="step-number">1</div>
-              <div class="step-title">Connect or export from your system</div>
+              <div class="step-title">Export or connect your invoices</div>
               <p class="step-text">
-                Start with simple exports from QuickBooks or Wave. In a later phase,
-                we can connect directly via API for automatic syncing.
+                Start with simple exports from QuickBooks or Wave. In later phases, we’ll move toward deeper
+                connections so new invoices flow in automatically.
               </p>
             </div>
             <div class="step-card">
               <div class="step-number">2</div>
-              <div class="step-title">We normalize and detect what’s overdue</div>
+              <div class="step-title">We detect what’s overdue</div>
               <p class="step-text">
-                InvoiceChaser standardizes your invoice data, calculates how old
-                each invoice is, and decides which stage of reminder to send
-                based on your rules.
+                InvoiceChaser standardizes your invoice data, calculates how old each invoice is, and decides which
+                stage of reminder to send based on your rules.
               </p>
             </div>
             <div class="step-card">
               <div class="step-number">3</div>
               <div class="step-title">Automated, polite follow-up emails</div>
               <p class="step-text">
-                Every reminder goes out with the right tone, payment options,
-                and audit trail. Clients feel nudged, not nagged—and you get
-                paid faster without chasing anyone.
+                Every reminder goes out with the right tone, payment options, and audit trail. Clients feel nudged,
+                not nagged—and you get paid faster without chasing anyone.
               </p>
             </div>
           </div>
@@ -882,10 +946,10 @@
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">Key capabilities</div>
-            <h2 class="section-title">Built for contractors and small teams</h2>
+            <h2 class="section-title">Built for contractors, freelancers, and small teams</h2>
             <p class="section-subtitle">
-              You don’t need enterprise software. You need something that fits beside
-              the tools you already use and quietly handles the follow-up.
+              You don’t need enterprise software. You need something that fits beside the tools you already use and
+              quietly handles the follow-up for you.
             </p>
           </div>
 
@@ -894,48 +958,42 @@
               <div class="feature-tag">Automation</div>
               <div class="feature-title">Multi-stage reminder flows</div>
               <p class="feature-text">
-                Gentle, firm, and pre-collections messages that escalate in tone as
-                invoices age—without you writing a single email.
+                Gentle, firm, and pre-collections messages that escalate in tone as invoices age—without you writing a single email.
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Tone control</div>
               <div class="feature-title">Client-specific messaging</div>
               <p class="feature-text">
-                Configure tone presets per client: ultra-friendly, standard professional,
-                or firm and direct. Keep relationships strong while staying on top of AR.
+                Configure tone presets per client: ultra-friendly, standard professional, or firm and direct. Keep relationships strong while staying on top of AR.
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Payments</div>
               <div class="feature-title">Clear payment instructions</div>
               <p class="feature-text">
-                Include ACH, Zelle, card links, or Venmo handles in every email so clients
-                always know exactly how to pay you.
+                Include ACH, Zelle, card links, or Venmo handles in every email so clients always know exactly how to pay you.
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Accounting-friendly</div>
               <div class="feature-title">QuickBooks & Wave aware</div>
               <p class="feature-text">
-                Designed to sit beside your existing accounting software—not replace it.
-                Import data cleanly and keep your books where they are.
+                Designed to sit beside your existing accounting software—not replace it. Import data cleanly and keep your books where they are.
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Reporting</div>
               <div class="feature-title">Aging & follow-up logs</div>
               <p class="feature-text">
-                Automatically generated aging reports and sent-logs make it easy to
-                answer “Who did we remind, when, and how?”
+                Automatically generated aging reports and sent-logs make it easy to answer “Who did we remind, when, and how?”
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Reliability</div>
               <div class="feature-title">Runs quietly in the background</div>
               <p class="feature-text">
-                Once configured, InvoiceChaser runs on a schedule, pulls in new invoice
-                data, and sends reminders—so you don’t have to.
+                Once configured, InvoiceChaser runs on a schedule, pulls in new invoice data, and sends reminders—so you don’t have to.
               </p>
             </div>
           </div>
@@ -949,8 +1007,7 @@
             <div class="section-eyebrow">Pricing</div>
             <h2 class="section-title">Simple pricing that pays for itself</h2>
             <p class="section-subtitle">
-              InvoiceChaser is designed to be a cash-flow engine, not a budget problem.
-              One recovered invoice per month usually covers the subscription.
+              InvoiceChaser is designed to be a cash-flow engine, not a budget problem. One recovered invoice per month usually covers the subscription.
             </p>
           </div>
 
@@ -963,8 +1020,7 @@
                   $20<span class="pricing-period">/month</span>
                 </div>
                 <p class="pricing-desc">
-                  For self-employed contractors and consultants who invoice a handful of
-                  clients each month.
+                  For self-employed contractors and consultants who invoice a handful of clients each month.
                 </p>
                 <ul class="pricing-features">
                   <li>Up to 50 active invoices/month</li>
@@ -996,8 +1052,7 @@
                   $59<span class="pricing-period">/month</span>
                 </div>
                 <p class="pricing-desc">
-                  For small teams with recurring clients and steady invoicing volume.
-                  Best balance of volume and control.
+                  For small teams with recurring clients and steady invoicing volume. Best balance of volume and control.
                 </p>
                 <ul class="pricing-features">
                   <li>Up to 250 active invoices/month</li>
@@ -1027,8 +1082,7 @@
                   Custom<span class="pricing-period">/month</span>
                 </div>
                 <p class="pricing-desc">
-                  For higher-volume operations that need multi-brand setups, special
-                  workflows, or tighter integration.
+                  For higher-volume operations that need multi-brand setups, special workflows, or tighter integration.
                 </p>
                 <ul class="pricing-features">
                   <li>Unlimited active invoices</li>
@@ -1103,9 +1157,8 @@
             <div class="faq-item">
               <div class="faq-q">How long does it take to get started?</div>
               <div class="faq-a">
-                For most small businesses, we can go from “first call” to “live
-                reminders” within a couple of days once we agree on your tone,
-                payment instructions, and file format.
+                For most small businesses, you can go from “first visit” to “live reminders” in days,
+                once we know your file format, tone preferences, and payment instructions.
               </div>
             </div>
           </div>
@@ -1117,10 +1170,10 @@
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">Get started</div>
-            <h2 class="section-title">Let’s see if InvoiceChaser fits your pipeline</h2>
+            <h2 class="section-title">Ready to stop chasing invoices manually?</h2>
             <p class="section-subtitle">
-              Share a bit about how you invoice and follow up today. We’ll respond with
-              a short, no-pressure walkthrough tailored to how your business actually works.
+              Prefer a quick conversation first, or have questions about fit, volume, or integrations?
+              Share a bit about your billing world and we’ll follow up with a short, no-pressure walkthrough.
             </p>
           </div>
 
@@ -1128,9 +1181,8 @@
             <div class="contact-card">
               <h3>Talk it through first</h3>
               <p>
-                Prefer to start with a quick conversation? Reach out and we’ll walk
-                through what your invoicing world looks like today and whether it
-                makes sense to automate follow-ups.
+                Contractors and freelancers are busy. If you’d rather sanity-check whether this fits your
+                business before jumping in, reach out and we’ll talk through how you invoice and follow up today.
               </p>
               <p class="contact-meta">
                 <strong>Email:</strong>
@@ -1147,9 +1199,9 @@
 
             <div class="contact-form">
               <div class="contact-note">
-                This is a preview of the intake form we’ll eventually wire into the
-                live system. For now, you can send these details directly by email
-                and we’ll follow up.
+                This form will soon be wired directly into our system so submissions generate a live lead.
+                For now, use it to quickly compose an email with the key details—we’ll still receive it at
+                <strong>support@getinvoicechaser.com</strong>.
               </div>
 
               <div class="form-row">
