@@ -34,8 +34,7 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
@@ -701,6 +700,34 @@
       cursor: pointer;
     }
 
+    .contact-form button:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .status-banner {
+      margin-top: 0.65rem;
+      padding: 0.55rem 0.7rem;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #ffffff;
+      font-size: 0.8rem;
+      color: #374151;
+      display: none;
+    }
+
+    .status-banner.ok {
+      border-color: rgba(34, 197, 94, 0.35);
+      background: rgba(236, 253, 243, 0.65);
+      color: #065f46;
+    }
+
+    .status-banner.err {
+      border-color: rgba(185, 28, 28, 0.35);
+      background: rgba(254, 242, 242, 0.75);
+      color: #7f1d1d;
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border-subtle);
@@ -758,6 +785,9 @@
       }
       .hero-title {
         font-size: 1.9rem;
+      }
+      .form-row {
+        flex-direction: column;
       }
     }
   </style>
@@ -1199,57 +1229,56 @@
 
             <div class="contact-form">
               <div class="contact-note">
-                This form will soon be wired directly into our system so submissions generate a live lead.
-                For now, use it to quickly compose an email with the key details—we’ll still receive it at
+                This form now submits directly to our lead system (no copy/paste).
+                If anything blocks the request, it will automatically fall back to an email draft to
                 <strong>support@getinvoicechaser.com</strong>.
               </div>
 
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="name">Name</label>
-                  <input id="name" type="text" placeholder="Your name" />
+              <!-- IMPORTANT: This is the only functional change to wire the form to your Lead API -->
+              <form id="leadForm" onsubmit="submitLead(event)">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="company">Company</label>
+                    <input id="company" name="company" type="text" placeholder="Your company" autocomplete="organization" />
+                  </div>
                 </div>
-                <div class="form-field">
-                  <label for="company">Company</label>
-                  <input id="company" type="text" placeholder="Your company" />
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="email">Work email</label>
+                    <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="system">Current invoicing system</label>
+                    <input id="system" name="system" type="text" placeholder="QuickBooks, Wave, etc." />
+                  </div>
                 </div>
-              </div>
 
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="email">Work email</label>
-                  <input id="email" type="email" placeholder="you@company.com" />
+                <div class="form-field" style="margin-bottom: 0.7rem;">
+                  <label for="volume">Approx. invoices sent per month</label>
+                  <input id="volume" name="volume" type="text" placeholder="e.g., 25, 100, 250+" />
                 </div>
-                <div class="form-field">
-                  <label for="system">Current invoicing system</label>
-                  <input
-                    id="system"
-                    type="text"
-                    placeholder="QuickBooks, Wave, etc."
-                  />
+
+                <div class="form-field" style="margin-bottom: 0.7rem;">
+                  <label for="message">What’s the biggest headache you want to solve?</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us how you currently chase late invoices and what an ideal setup would look like."
+                    required
+                  ></textarea>
                 </div>
-              </div>
 
-              <div class="form-field" style="margin-bottom: 0.7rem;">
-                <label for="volume">Approx. invoices sent per month</label>
-                <input
-                  id="volume"
-                  type="text"
-                  placeholder="e.g., 25, 100, 250+"
-                />
-              </div>
+                <button id="leadSubmitBtn" type="submit">
+                  Send inquiry
+                </button>
 
-              <div class="form-field" style="margin-bottom: 0.7rem;">
-                <label for="message">What’s the biggest headache you want to solve?</label>
-                <textarea
-                  id="message"
-                  placeholder="Tell us how you currently chase late invoices and what an ideal setup would look like."
-                ></textarea>
-              </div>
-
-              <button type="button" onclick="emailIntakeForm()">
-                Copy these questions & email them
-              </button>
+                <div id="leadStatus" class="status-banner" role="status" aria-live="polite"></div>
+              </form>
             </div>
           </div>
         </div>
@@ -1273,38 +1302,123 @@
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Build an email with the intake info and open the user's mail client
-    function emailIntakeForm() {
-      const name = document.getElementById("name").value.trim();
-      const company = document.getElementById("company").value.trim();
-      const workEmail = document.getElementById("email").value.trim();
-      const system = document.getElementById("system").value.trim();
-      const volume = document.getElementById("volume").value.trim();
-      const message = document.getElementById("message").value.trim();
+    /**
+     * Lead API endpoint:
+     * - Local dev (what you're running now): http://127.0.0.1:5055/lead
+     * - Production: replace this with your deployed API URL, e.g. https://api.getinvoicechaser.com/lead
+     *
+     * NOTE: If index.html is served from GitHub Pages, it cannot reach 127.0.0.1 (that's the visitor's computer).
+     * Local testing works when you're running both locally. Production requires the Lead API deployed publicly.
+     */
+    const LEAD_API_URL = "http://127.0.0.1:5055/lead";
 
+    function setStatus(type, message) {
+      const el = document.getElementById("leadStatus");
+      el.classList.remove("ok", "err");
+      if (type === "ok") el.classList.add("ok");
+      if (type === "err") el.classList.add("err");
+      el.style.display = "block";
+      el.textContent = message;
+    }
+
+    function clearStatus() {
+      const el = document.getElementById("leadStatus");
+      el.style.display = "none";
+      el.textContent = "";
+      el.classList.remove("ok", "err");
+    }
+
+    function buildMailtoFallback(payload) {
       const to = "support@getinvoicechaser.com";
       const subject = encodeURIComponent(
-        "New InvoiceChaser inquiry from " + (name || "website visitor")
+        "New InvoiceChaser inquiry from " + (payload.name || "website visitor")
       );
 
       const bodyLines = [
-        "Name: " + name,
-        "Company: " + company,
-        "Work email: " + workEmail,
-        "Current invoicing system: " + system,
-        "Approx. invoices sent per month: " + volume,
+        "Name: " + (payload.name || ""),
+        "Company: " + (payload.company || ""),
+        "Work email: " + (payload.email || ""),
+        "Current invoicing system: " + (payload.system || ""),
+        "Approx. invoices sent per month: " + (payload.volume || ""),
         "",
         "Biggest headache they want to solve:",
-        message,
+        (payload.message || ""),
         "",
         "---",
         "Submitted via getinvoicechaser.com contact form."
       ];
 
       const body = encodeURIComponent(bodyLines.join("\n"));
-      const mailto = "mailto:" + to + "?subject=" + subject + "&body=" + body;
+      return "mailto:" + to + "?subject=" + subject + "&body=" + body;
+    }
 
-      window.location.href = mailto;
+    async function submitLead(event) {
+      event.preventDefault();
+      clearStatus();
+
+      const btn = document.getElementById("leadSubmitBtn");
+      btn.disabled = true;
+
+      const payload = {
+        source: "website_contact_form",
+        page_url: window.location.href,
+        user_agent: navigator.userAgent || "",
+        submitted_at: new Date().toISOString(),
+        name: document.getElementById("name").value.trim(),
+        company: document.getElementById("company").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        system: document.getElementById("system").value.trim(),
+        volume: document.getElementById("volume").value.trim(),
+        message: document.getElementById("message").value.trim()
+      };
+
+      // Minimal client-side validation
+      if (!payload.name || !payload.email || !payload.message) {
+        setStatus("err", "Please fill out Name, Work email, and the message.");
+        btn.disabled = false;
+        return;
+      }
+
+      try {
+        setStatus("ok", "Sending…");
+
+        const res = await fetch(LEAD_API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          // Try to read JSON error if present
+          let detail = "";
+          try {
+            const data = await res.json();
+            if (data && (data.error || data.message)) detail = " (" + (data.error || data.message) + ")";
+          } catch (_) {}
+
+          throw new Error("Lead API returned " + res.status + detail);
+        }
+
+        setStatus("ok", "✅ Submitted. We’ll follow up shortly.");
+        document.getElementById("leadForm").reset();
+      } catch (err) {
+        console.error("Lead submit failed:", err);
+
+        // Automatic fallback: open an email draft so the lead isn't lost
+        setStatus(
+          "err",
+          "Couldn’t submit automatically (likely because the Lead API isn’t publicly reachable yet). Opening an email draft as fallback…"
+        );
+
+        // Give the user a beat to read the message, then fall back
+        setTimeout(() => {
+          window.location.href = buildMailtoFallback(payload);
+        }, 700);
+      } finally {
+        btn.disabled = false;
+      }
     }
   </script>
 </body>
