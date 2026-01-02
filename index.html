@@ -1310,7 +1310,7 @@
      * NOTE: If index.html is served from GitHub Pages, it cannot reach 127.0.0.1 (that's the visitor's computer).
      * Local testing works when you're running both locally. Production requires the Lead API deployed publicly.
      */
-    const LEAD_API_URL = "http://127.0.0.1:5055/lead";
+    const LEAD_API_URL = "https://invoicechaser-lead-api.onrender.com/api/lead";
 
     function setStatus(type, message) {
       const el = document.getElementById("leadStatus");
@@ -1423,3 +1423,4 @@
   </script>
 </body>
 </html>
+
