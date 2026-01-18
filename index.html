@@ -4,38 +4,38 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-05FRTK9ZPN');
 </script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1565179907854945');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1565179907854945');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <meta charset="UTF-8" />
   <title>InvoiceChaser – Automated Invoice Reminders for Small Businesses</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="InvoiceChaser automates invoice reminder emails for contractors and small businesses using your existing accounting system."
+    content="InvoiceChaser automates overdue invoice reminder emails for contractors and small businesses — using your current system or a simple template."
   />
 
-  <!-- Simple corporate style: navy / white / light gray -->
   <style>
     :root {
       --navy: #0b1f3b;
@@ -47,17 +47,12 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       --text-muted: #6b7280;
       --border-subtle: #e5e7eb;
       --white: #ffffff;
-      --danger: #b91c1c;
       --radius-lg: 12px;
       --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
       --max-width: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -66,16 +61,9 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
 
     .container {
       width: 100%;
@@ -102,57 +90,26 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       color: #e5e7eb;
     }
 
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
+    .nav-left { display: flex; align-items: center; gap: 0.65rem; }
 
     .logo-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
+      width: 32px; height: 32px; border-radius: 9px;
       background: radial-gradient(circle at 20% 20%, #60a5fa, #1d4ed8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #e5efff;
-      font-weight: 700;
-      font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      color: #e5efff; font-weight: 700; font-size: 0.9rem;
       box-shadow: 0 6px 20px rgba(15, 23, 42, 0.55);
     }
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-name {
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      font-size: 1rem;
-    }
-
-    .brand-tagline {
-      font-size: 0.75rem;
-      color: #9ca3af;
-    }
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-name { font-weight: 600; letter-spacing: 0.02em; font-size: 1rem; }
+    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
 
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      font-size: 0.9rem;
+      display: flex; align-items: center; gap: 1.25rem; font-size: 0.9rem;
     }
 
-    .nav-links a {
-      color: #e5e7eb;
-      opacity: 0.85;
-    }
-
-    .nav-links a:hover {
-      opacity: 1;
-    }
+    .nav-links a { color: #e5e7eb; opacity: 0.85; }
+    .nav-links a:hover { opacity: 1; }
 
     .nav-cta {
       padding: 0.4rem 0.9rem;
@@ -161,10 +118,7 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       font-size: 0.8rem;
     }
 
-    .nav-cta span {
-      color: #bfdbfe;
-      font-weight: 500;
-    }
+    .nav-cta span { color: #bfdbfe; font-weight: 500; }
 
     /* --- Hero --- */
     .hero {
@@ -175,29 +129,21 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
 
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
       gap: 3rem;
-      align-items: center;
+      align-items: start;
     }
 
     .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.18rem 0.7rem;
-      border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.18rem 0.7rem; border-radius: 999px;
       border: 1px solid rgba(37, 99, 235, 0.22);
       background: rgba(219, 234, 254, 0.6);
-      color: #1d4ed8;
-      font-size: 0.75rem;
-      margin-bottom: 1rem;
+      color: #1d4ed8; font-size: 0.75rem; margin-bottom: 1rem;
     }
 
     .hero-kicker-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
+      width: 7px; height: 7px; border-radius: 999px; background: #22c55e;
     }
 
     .hero-title {
@@ -207,41 +153,31 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       margin-bottom: 0.8rem;
     }
 
-    .hero-highlight {
-      color: var(--accent);
-      font-weight: 700;
-    }
+    .hero-highlight { color: var(--accent); font-weight: 800; }
 
     .hero-subtitle {
       color: var(--text-muted);
       font-size: 0.98rem;
-      max-width: 34rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      max-width: 38rem;
       margin-bottom: 1.25rem;
     }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.0rem; }
 
     .btn-primary {
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: #eff6ff;
-      font-weight: 500;
+      font-weight: 600;
       padding: 0.7rem 1.4rem;
       border-radius: 999px;
       border: none;
       cursor: pointer;
       font-size: 0.95rem;
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+      transition: transform 120ms ease;
     }
 
-    .btn-primary:hover {
-      filter: brightness(1.02);
-      transform: translateY(-1px);
-    }
+    .btn-primary:hover { filter: brightness(1.02); transform: translateY(-1px); }
 
     .btn-secondary {
       background: rgba(15, 23, 42, 0.02);
@@ -253,115 +189,139 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       cursor: pointer;
     }
 
-    .btn-secondary:hover {
-      background: rgba(15, 23, 42, 0.04);
+    .btn-secondary:hover { background: rgba(15, 23, 42, 0.04); }
+
+    .hero-footnote { font-size: 0.82rem; color: var(--text-muted); }
+    .hero-footnote strong { color: var(--navy-light); }
+
+    /* --- Hero callout (No CSV) --- */
+    .callout {
+      margin-top: 1.1rem;
+      background: #ffffff;
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      border-left: 6px solid #2563eb;
+      border-radius: 14px;
+      padding: 0.95rem 1.05rem;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
     }
 
-    .hero-footnote {
-      font-size: 0.8rem;
+    .callout-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .callout-text {
+      font-size: 0.86rem;
       color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      max-width: 42rem;
     }
 
-    .hero-footnote strong {
-      color: var(--navy-light);
+    .callout-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
     }
 
-    /* Hero card */
-    .hero-card {
+    .callout-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      background: #f9fafb;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .callout-chip.primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #eff6ff;
+      border: none;
+    }
+
+    /* --- Proof card on right --- */
+    .proof-card {
       background: var(--white);
       border-radius: 18px;
-      padding: 1.4rem 1.4rem 1.1rem;
+      padding: 1.05rem 1.05rem 1.0rem;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(148, 163, 184, 0.35);
+      position: sticky;
+      top: 88px;
     }
 
-    .hero-card-header {
+    .proof-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.9rem;
+      gap: 0.75rem;
+      margin-bottom: 0.7rem;
     }
 
-    .hero-card-title {
-      font-size: 0.95rem;
-      font-weight: 600;
+    .proof-title {
+      font-size: 0.92rem;
+      font-weight: 800;
       color: var(--navy);
+      line-height: 1.2;
     }
 
-    .hero-badge {
-      font-size: 0.72rem;
-      padding: 0.18rem 0.6rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #1d4ed8;
+    .proof-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
       font-weight: 500;
     }
 
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 1.2rem;
-      font-size: 0.75rem;
+    .proof-tabs {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .metric {
-      padding: 0.55rem 0.7rem;
-      border-radius: 10px;
+    .tab-btn {
+      border: 1px solid rgba(148, 163, 184, 0.6);
       background: #f9fafb;
-      border: 1px solid #e5e7eb;
-    }
-
-    .metric-label {
-      color: #6b7280;
-      margin-bottom: 0.15rem;
-      font-size: 0.72rem;
-    }
-
-    .metric-value {
-      font-weight: 600;
       color: var(--navy);
-      font-size: 0.9rem;
-    }
-
-    .metric-value span {
-      color: #16a34a;
-      font-size: 0.72rem;
-      margin-left: 0.2rem;
-    }
-
-    .pipeline-steps {
-      border-radius: 12px;
-      background: #f9fafb;
-      border: 1px dashed #e5e7eb;
-      padding: 0.7rem 0.85rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
       font-size: 0.78rem;
-      color: #4b5563;
+      font-weight: 700;
+      cursor: pointer;
     }
 
-    .pipeline-steps strong {
-      color: var(--navy-light);
+    .tab-btn.active {
+      background: rgba(37, 99, 235, 0.12);
+      border-color: rgba(37, 99, 235, 0.55);
+      color: #1d4ed8;
     }
 
-    .pipeline-steps ul {
-      margin-left: 1.1rem;
-      margin-top: 0.3rem;
+    .proof-image {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: #ffffff;
+      display: block;
     }
 
-    .pipeline-steps li {
-      margin-bottom: 0.2rem;
+    .proof-tip {
+      margin-top: 0.65rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
+
+    .proof-tip strong { color: var(--navy-light); }
 
     /* --- Sections --- */
-    section {
-      padding: 3rem 0;
-    }
+    section { padding: 3rem 0; }
 
-    .section-header {
-      text-align: left;
-      margin-bottom: 1.75rem;
-    }
-
+    .section-header { text-align: left; margin-bottom: 1.75rem; }
     .section-eyebrow {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -369,18 +329,8 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       color: #9ca3af;
       margin-bottom: 0.5rem;
     }
-
-    .section-title {
-      font-size: 1.4rem;
-      color: var(--navy);
-      margin-bottom: 0.3rem;
-    }
-
-    .section-subtitle {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      max-width: 34rem;
-    }
+    .section-title { font-size: 1.4rem; color: var(--navy); margin-bottom: 0.3rem; }
+    .section-subtitle { color: var(--text-muted); font-size: 0.9rem; max-width: 34rem; }
 
     /* Pain section */
     .pain-grid {
@@ -388,25 +338,19 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.1rem;
     }
-
     .pain-card {
       background: var(--white);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
       padding: 0.9rem 1rem;
     }
-
     .pain-card h3 {
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--navy);
       margin-bottom: 0.25rem;
     }
-
-    .pain-card p {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-    }
+    .pain-card p { font-size: 0.84rem; color: var(--text-muted); }
 
     /* How it works */
     .steps-grid {
@@ -414,7 +358,6 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.5rem;
     }
-
     .step-card {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -422,32 +365,22 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       border: 1px solid var(--border-subtle);
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.03);
     }
-
     .step-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
+      width: 26px; height: 26px; border-radius: 999px;
       background: var(--accent-soft);
       color: #1d4ed8;
       font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       margin-bottom: 0.6rem;
-      font-weight: 600;
+      font-weight: 800;
     }
-
     .step-title {
       font-size: 0.98rem;
-      font-weight: 600;
+      font-weight: 800;
       color: var(--navy-light);
       margin-bottom: 0.25rem;
     }
-
-    .step-text {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
+    .step-text { font-size: 0.86rem; color: var(--text-muted); }
 
     /* Features */
     .features-grid {
@@ -455,14 +388,12 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.3rem;
     }
-
     .feature-card {
       background: var(--white);
       border-radius: var(--radius-lg);
       padding: 1rem;
       border: 1px solid var(--border-subtle);
     }
-
     .feature-tag {
       display: inline-flex;
       align-items: center;
@@ -472,19 +403,10 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       background: #eff6ff;
       color: #1d4ed8;
       margin-bottom: 0.4rem;
+      font-weight: 700;
     }
-
-    .feature-title {
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 0.2rem;
-      color: var(--navy);
-    }
-
-    .feature-text {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-    }
+    .feature-title { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--navy); }
+    .feature-text { font-size: 0.84rem; color: var(--text-muted); }
 
     /* Pricing */
     .pricing-grid {
@@ -493,7 +415,6 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       gap: 1.5rem;
       align-items: stretch;
     }
-
     .pricing-card {
       background: var(--white);
       border-radius: 16px;
@@ -504,19 +425,12 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       flex-direction: column;
       justify-content: space-between;
     }
-
     .pricing-card.highlight {
       border: 1px solid rgba(37, 99, 235, 0.7);
       box-shadow: 0 18px 40px rgba(37, 99, 235, 0.18);
       transform: translateY(-4px);
     }
-
-    .pricing-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--navy);
-    }
-
+    .pricing-name { font-size: 0.95rem; font-weight: 800; color: var(--navy); }
     .pricing-pill {
       font-size: 0.7rem;
       padding: 0.14rem 0.5rem;
@@ -524,52 +438,21 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       background: #ecfdf3;
       color: #166534;
       margin-left: 0.4rem;
+      font-weight: 800;
     }
-
     .pricing-price {
       margin-top: 0.5rem;
       margin-bottom: 0.15rem;
       font-size: 1.35rem;
-      font-weight: 700;
+      font-weight: 900;
       color: var(--navy-light);
     }
-
-    .pricing-period {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .pricing-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .pricing-features {
-      list-style: none;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .pricing-features li {
-      margin-bottom: 0.25rem;
-      display: flex;
-      gap: 0.3rem;
-    }
-
-    .pricing-features li::before {
-      content: "•";
-      color: #16a34a;
-      font-weight: bold;
-    }
-
-    .pricing-cta {
-      margin-top: auto;
-    }
-
-    /* style anchors inside pricing CTA as buttons */
+    .pricing-period { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; }
+    .pricing-desc { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; margin-bottom: 0.7rem; }
+    .pricing-features { list-style: none; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.9rem; }
+    .pricing-features li { margin-bottom: 0.25rem; display: flex; gap: 0.3rem; }
+    .pricing-features li::before { content: "•"; color: #16a34a; font-weight: bold; }
+    .pricing-cta { margin-top: auto; }
     .pricing-cta a {
       display: block;
       width: 100%;
@@ -578,46 +461,22 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       border: none;
       font-size: 0.86rem;
       cursor: pointer;
-      font-weight: 500;
+      font-weight: 800;
       text-align: center;
     }
-
-    .pricing-cta .primary {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: #eff6ff;
-    }
-
-    .pricing-cta .secondary {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      color: var(--navy);
-    }
+    .pricing-cta .primary { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #eff6ff; }
+    .pricing-cta .secondary { background: #f9fafb; border: 1px solid #e5e7eb; color: var(--navy); }
 
     /* FAQ */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
+    .faq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
     .faq-item {
       background: var(--white);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
       padding: 0.9rem 1rem;
     }
-
-    .faq-q {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.25rem;
-    }
-
-    .faq-a {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-    }
+    .faq-q { font-size: 0.9rem; font-weight: 900; color: var(--navy); margin-bottom: 0.25rem; }
+    .faq-a { font-size: 0.84rem; color: var(--text-muted); }
 
     /* Contact */
     .contact-layout {
@@ -626,7 +485,6 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       gap: 2.2rem;
       align-items: flex-start;
     }
-
     .contact-card {
       background: var(--white);
       border-radius: 16px;
@@ -634,34 +492,11 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       padding: 1.1rem 1.2rem;
       box-shadow: var(--shadow-soft);
     }
-
-    .contact-card h3 {
-      font-size: 1rem;
-      color: var(--navy);
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .contact-meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .contact-meta strong {
-      color: var(--navy-light);
-    }
-
-    .contact-meta a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
+    .contact-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 0.4rem; font-weight: 900; }
+    .contact-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .contact-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+    .contact-meta strong { color: var(--navy-light); }
+    .contact-meta a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
     .contact-form {
       background: #f9fafb;
@@ -670,25 +505,11 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       padding: 1rem 1.05rem;
     }
 
-    .form-row {
-      display: flex;
-      gap: 0.6rem;
-      margin-bottom: 0.7rem;
-    }
+    .form-row { display: flex; gap: 0.6rem; margin-bottom: 0.7rem; }
+    .form-field { flex: 1; }
+    label { display: block; font-size: 0.78rem; color: #4b5563; margin-bottom: 0.18rem; font-weight: 800; }
 
-    .form-field {
-      flex: 1;
-    }
-
-    label {
-      display: block;
-      font-size: 0.78rem;
-      color: #4b5563;
-      margin-bottom: 0.18rem;
-    }
-
-    input,
-    textarea {
+    input, textarea {
       width: 100%;
       border-radius: 8px;
       border: 1px solid #d1d5db;
@@ -697,23 +518,14 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       background: #ffffff;
     }
 
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    input:focus,
-    textarea:focus {
+    textarea { resize: vertical; min-height: 80px; }
+    input:focus, textarea:focus {
       outline: 2px solid rgba(37, 99, 235, 0.3);
       outline-offset: 0;
       border-color: #2563eb;
     }
 
-    .contact-note {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
+    .contact-note { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.6rem; }
 
     .contact-form button {
       padding: 0.55rem 1.1rem;
@@ -722,14 +534,11 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: #eff6ff;
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 900;
       cursor: pointer;
     }
 
-    .contact-form button:disabled {
-      opacity: 0.65;
-      cursor: not-allowed;
-    }
+    .contact-form button:disabled { opacity: 0.65; cursor: not-allowed; }
 
     .status-banner {
       margin-top: 0.65rem;
@@ -740,14 +549,13 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       font-size: 0.8rem;
       color: #374151;
       display: none;
+      font-weight: 700;
     }
-
     .status-banner.ok {
       border-color: rgba(34, 197, 94, 0.35);
       background: rgba(236, 253, 243, 0.65);
       color: #065f46;
     }
-
     .status-banner.err {
       border-color: rgba(185, 28, 28, 0.35);
       background: rgba(254, 242, 242, 0.75);
@@ -763,7 +571,6 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       background: #f9fafb;
       margin-top: 2rem;
     }
-
     .footer-inner {
       display: flex;
       flex-wrap: wrap;
@@ -771,53 +578,27 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       align-items: center;
       gap: 0.8rem;
     }
-
-    .footer-links {
-      display: flex;
-      gap: 0.9rem;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-    }
+    .footer-links { display: flex; gap: 0.9rem; }
+    .footer-links a { color: var(--text-muted); }
 
     /* Responsive */
     @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-card {
-        order: -1;
-        margin-bottom: 1.5rem;
-      }
-      .steps-grid,
-      .features-grid,
-      .pricing-grid,
-      .faq-grid,
-      .pain-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .contact-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .hero-inner { grid-template-columns: minmax(0, 1fr); }
+      .proof-card { position: relative; top: 0; }
+      .steps-grid, .features-grid, .pricing-grid, .faq-grid, .pain-grid { grid-template-columns: minmax(0, 1fr); }
+      .contact-layout { grid-template-columns: minmax(0, 1fr); }
     }
-
     @media (max-width: 640px) {
-      .nav-links {
-        display: none;
-      }
-      .hero {
-        padding-top: 2.4rem;
-      }
-      .hero-title {
-        font-size: 1.9rem;
-      }
-      .form-row {
-        flex-direction: column;
-      }
+      .nav-links { display: none; }
+      .hero { padding-top: 2.4rem; }
+      .hero-title { font-size: 1.9rem; }
+      .form-row { flex-direction: column; }
+      .proof-top { flex-direction: column; align-items: flex-start; }
+      .proof-tabs { justify-content: flex-start; }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <!-- NAVBAR -->
@@ -835,9 +616,7 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
-          <a href="#contact" class="nav-cta">
-            <span>Contact</span>
-          </a>
+          <a href="#contact" class="nav-cta"><span>Contact</span></a>
         </nav>
       </div>
     </header>
@@ -851,65 +630,75 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
               <span class="hero-kicker-dot"></span>
               Built for contractors, freelancers, and small teams
             </div>
+
             <h1 class="hero-title">
-              Turn it on. <span class="hero-highlight">Get paid.</span>
+              Stop chasing invoices. <span class="hero-highlight">Get paid.</span>
             </h1>
+
             <p class="hero-subtitle">
-              Stop wasting hours chasing clients for money. InvoiceChaser plugs into the way
-              you already bill and quietly handles overdue reminders—so you get paid on time
-              without awkward follow-ups.
+              InvoiceChaser automatically emails overdue reminders with your payment instructions
+              (Venmo, Zelle, ACH, card link, website — whatever you use). You keep billing the way you do today.
             </p>
+
             <div class="hero-actions">
-              <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'});">
+              <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});">
                 Start getting paid faster
               </button>
-              <button class="btn-secondary" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'});">
-                See how it works
+              <button class="btn-secondary" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'});">
+                See exactly how it works
               </button>
             </div>
-            <p class="hero-footnote">
-              <strong>No new accounting system.</strong> You keep using QuickBooks or Wave. One recovered invoice a month usually covers the subscription.
+
+            <!-- No CSV callout (this is the "must-see" box) -->
+            <div class="callout" role="note" aria-label="No CSV callout">
+              <div class="callout-title">No CSV? No problem.</div>
+              <div class="callout-text">
+                If you don’t export from QuickBooks/Wave, we’ll give you a simple template <strong>free of charge</strong>.
+                Fill it in once a month and send it — InvoiceChaser does the rest.
+              </div>
+              <div class="callout-actions">
+                <button class="callout-chip primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});">
+                  Start getting paid faster
+                </button>
+                <button class="callout-chip" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                  Request the free template
+                </button>
+              </div>
+            </div>
+
+            <p class="hero-footnote" style="margin-top:0.9rem;">
+              <strong>Not a new accounting system.</strong> Works with QuickBooks/Wave exports — or the template above.
+              One recovered invoice a month usually covers the subscription.
             </p>
           </div>
 
-          <aside class="hero-card" aria-label="Sample dashboard">
-            <div class="hero-card-header">
-              <div class="hero-card-title">This month at a glance</div>
-              <div class="hero-badge">Live AR snapshot</div>
-            </div>
-            <div class="hero-metrics">
-              <div class="metric">
-                <div class="metric-label">Outstanding invoices</div>
-                <div class="metric-value">
-                  $28,450 <span>−38% vs last month</span>
-                </div>
+          <!-- Proof card: show actual output -->
+          <aside class="proof-card" aria-label="Example output">
+            <div class="proof-top">
+              <div>
+                <div class="proof-title">See what your clients receive</div>
+                <div class="proof-sub">Real reminder format — with your payment options included</div>
               </div>
-              <div class="metric">
-                <div class="metric-label">Invoices auto-followed</div>
-                <div class="metric-value">
-                  47 <span>+100% automated</span>
-                </div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Average days to pay</div>
-                <div class="metric-value">
-                  13 days <span>−9 days</span>
-                </div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Chase rate</div>
-                <div class="metric-value">
-                  0 calls <span>email-only follow-ups</span>
-                </div>
+              <div class="proof-tabs" aria-label="Preview toggles">
+                <button class="tab-btn active" id="tabEmail" type="button" onclick="showProof('email')">
+                  Example email
+                </button>
+                <button class="tab-btn" id="tabTemplate" type="button" onclick="showProof('template')">
+                  Template
+                </button>
               </div>
             </div>
-            <div class="pipeline-steps">
-              <strong>Your pipeline, simplified:</strong>
-              <ul>
-                <li>1. Export invoices from QuickBooks or Wave</li>
-                <li>2. Drop them into InvoiceChaser</li>
-                <li>3. We handle the reminders, tone, and logging</li>
-              </ul>
+
+            <img
+              id="proofImg"
+              class="proof-image"
+              src="assets/example-reminder-email.png"
+              alt="Example overdue invoice reminder email"
+              loading="lazy"
+            />
+
+            <div class="proof-tip">
+              <strong>Tip:</strong> include a direct payment link/handle (Venmo/Zelle/website). That alone increases responses.
             </div>
           </aside>
         </div>
@@ -930,27 +719,19 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
           <div class="pain-grid">
             <div class="pain-card">
               <h3>Time you never get back</h3>
-              <p>
-                Manually sending reminder emails or texts eats hours every month—hours you could spend on billable work.
-              </p>
+              <p>Manually sending reminders eats hours every month—hours you could spend on billable work.</p>
             </div>
             <div class="pain-card">
               <h3>Awkward follow-ups</h3>
-              <p>
-                Contractors can be direct. Freelancers often feel guilty even asking to be paid. Either way, chasing money is uncomfortable.
-              </p>
+              <p>Some people are too nice. Others are too busy. Either way, chasing money is uncomfortable.</p>
             </div>
             <div class="pain-card">
               <h3>Clients ignore “just checking in” emails</h3>
-              <p>
-                They don’t ignore the work—you already did that. They ignore generic reminders that don’t make payment easy or urgent.
-              </p>
+              <p>Generic reminders don’t create urgency or make paying easy. Clear payment instructions do.</p>
             </div>
             <div class="pain-card">
               <h3>Cash flow delays stall everything</h3>
-              <p>
-                Late payments make it harder to invest, hire, or even breathe confidently about next month. Reliable follow-up changes that.
-              </p>
+              <p>Late payments make it harder to invest, hire, or breathe about next month. Reliable follow-up changes that.</p>
             </div>
           </div>
         </div>
@@ -961,36 +742,32 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">How it works</div>
-            <h2 class="section-title">Sits quietly beside your accounting software</h2>
+            <h2 class="section-title">Sits quietly beside your invoicing process</h2>
             <p class="section-subtitle">
-              No new system to learn. You keep using your existing invoicing tool—InvoiceChaser automates the part
-              everyone hates: overdue follow-ups.
+              You keep invoicing the way you do now. InvoiceChaser automates the part everyone hates: overdue follow-ups.
             </p>
           </div>
 
           <div class="steps-grid">
             <div class="step-card">
               <div class="step-number">1</div>
-              <div class="step-title">Export or connect your invoices</div>
+              <div class="step-title">Send invoices as usual</div>
               <p class="step-text">
-                Start with simple exports from QuickBooks or Wave. In later phases, we’ll move toward deeper
-                connections so new invoices flow in automatically.
+                Use QuickBooks, Wave, or your own process. If you don’t export invoices, we’ll provide a simple template.
               </p>
             </div>
             <div class="step-card">
               <div class="step-number">2</div>
               <div class="step-title">We detect what’s overdue</div>
               <p class="step-text">
-                InvoiceChaser standardizes your invoice data, calculates how old each invoice is, and decides which
-                stage of reminder to send based on your rules.
+                InvoiceChaser standardizes invoice data, calculates aging, and selects the right reminder stage based on your rules.
               </p>
             </div>
             <div class="step-card">
               <div class="step-number">3</div>
               <div class="step-title">Automated, polite follow-up emails</div>
               <p class="step-text">
-                Every reminder goes out with the right tone, payment options, and audit trail. Clients feel nudged,
-                not nagged—and you get paid faster without chasing anyone.
+                Reminders go out with the right tone and your payment instructions. Clients feel nudged—not nagged.
               </p>
             </div>
           </div>
@@ -1004,8 +781,7 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
             <div class="section-eyebrow">Key capabilities</div>
             <h2 class="section-title">Built for contractors, freelancers, and small teams</h2>
             <p class="section-subtitle">
-              You don’t need enterprise software. You need something that fits beside the tools you already use and
-              quietly handles the follow-up for you.
+              You don’t need enterprise software. You need something that fits beside your current tools and quietly handles follow-up.
             </p>
           </div>
 
@@ -1014,28 +790,28 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
               <div class="feature-tag">Automation</div>
               <div class="feature-title">Multi-stage reminder flows</div>
               <p class="feature-text">
-                Gentle, firm, and pre-collections messages that escalate in tone as invoices age—without you writing a single email.
+                Gentle, firm, and pre-collections messages that escalate as invoices age—without you writing a single email.
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Tone control</div>
               <div class="feature-title">Client-specific messaging</div>
               <p class="feature-text">
-                Configure tone presets per client: ultra-friendly, standard professional, or firm and direct. Keep relationships strong while staying on top of AR.
+                Configure tone presets per client (friendly, professional, firm) to protect relationships while staying on top of AR.
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Payments</div>
               <div class="feature-title">Clear payment instructions</div>
               <p class="feature-text">
-                Include ACH, Zelle, card links, or Venmo handles in every email so clients always know exactly how to pay you.
+                Include ACH, Zelle, card links, or Venmo handles so clients always know exactly how to pay you.
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Accounting-friendly</div>
               <div class="feature-title">QuickBooks & Wave aware</div>
               <p class="feature-text">
-                Designed to sit beside your existing accounting software—not replace it. Import data cleanly and keep your books where they are.
+                Designed to sit beside your accounting software—not replace it. Import cleanly and keep your books where they are.
               </p>
             </div>
             <div class="feature-card">
@@ -1049,7 +825,7 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
               <div class="feature-tag">Reliability</div>
               <div class="feature-title">Runs quietly in the background</div>
               <p class="feature-text">
-                Once configured, InvoiceChaser runs on a schedule, pulls in new invoice data, and sends reminders—so you don’t have to.
+                Once configured, InvoiceChaser runs on a schedule and sends reminders—so you don’t have to.
               </p>
             </div>
           </div>
@@ -1063,21 +839,17 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
             <div class="section-eyebrow">Pricing</div>
             <h2 class="section-title">Simple pricing that pays for itself</h2>
             <p class="section-subtitle">
-              InvoiceChaser is designed to be a cash-flow engine, not a budget problem. One recovered invoice per month usually covers the subscription.
+              InvoiceChaser is designed to be a cash-flow engine, not a budget problem.
+              One recovered invoice per month usually covers the subscription.
             </p>
           </div>
 
           <div class="pricing-grid">
-            <!-- Solo Contractor -->
             <div class="pricing-card">
               <div>
                 <div class="pricing-name">Solo Contractor</div>
-                <div class="pricing-price">
-                  $20<span class="pricing-period">/month</span>
-                </div>
-                <p class="pricing-desc">
-                  For self-employed contractors and consultants who invoice a handful of clients each month.
-                </p>
+                <div class="pricing-price">$20<span class="pricing-period">/month</span></div>
+                <p class="pricing-desc">For self-employed contractors and consultants who invoice a handful of clients each month.</p>
                 <ul class="pricing-features">
                   <li>Up to 50 active invoices/month</li>
                   <li>QuickBooks or Wave exports</li>
@@ -1086,30 +858,17 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
                 </ul>
               </div>
               <div class="pricing-cta">
-                <a
-                  class="primary"
-                  href="https://buy.stripe.com/dRm5kD6X9g8zgnhcuz5kk01"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a class="primary" href="https://buy.stripe.com/dRm5kD6X9g8zgnhcuz5kk01" target="_blank" rel="noopener noreferrer">
                   Start Solo Contractor
                 </a>
               </div>
             </div>
 
-            <!-- Growing Team -->
             <div class="pricing-card highlight">
               <div>
-                <div class="pricing-name">
-                  Growing Team
-                  <span class="pricing-pill">Most popular</span>
-                </div>
-                <div class="pricing-price">
-                  $59<span class="pricing-period">/month</span>
-                </div>
-                <p class="pricing-desc">
-                  For small teams with recurring clients and steady invoicing volume. Best balance of volume and control.
-                </p>
+                <div class="pricing-name">Growing Team <span class="pricing-pill">Most popular</span></div>
+                <div class="pricing-price">$59<span class="pricing-period">/month</span></div>
+                <p class="pricing-desc">For small teams with recurring clients and steady invoicing volume.</p>
                 <ul class="pricing-features">
                   <li>Up to 250 active invoices/month</li>
                   <li>QuickBooks & Wave support</li>
@@ -1119,38 +878,26 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
                 </ul>
               </div>
               <div class="pricing-cta">
-                <a
-                  class="primary"
-                  href="https://buy.stripe.com/eVq7sL81d7C33Avbqv5kk00"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a class="primary" href="https://buy.stripe.com/eVq7sL81d7C33Avbqv5kk00" target="_blank" rel="noopener noreferrer">
                   Start Growing Team
                 </a>
               </div>
             </div>
 
-            <!-- High volume -->
             <div class="pricing-card">
               <div>
                 <div class="pricing-name">High Volume / Multi-entity</div>
-                <div class="pricing-price">
-                  Custom<span class="pricing-period">/month</span>
-                </div>
-                <p class="pricing-desc">
-                  For higher-volume operations that need multi-brand setups, special workflows, or tighter integration.
-                </p>
+                <div class="pricing-price">Custom<span class="pricing-period">/month</span></div>
+                <p class="pricing-desc">For higher-volume operations that need multi-brand setups or special workflows.</p>
                 <ul class="pricing-features">
                   <li>Unlimited active invoices</li>
                   <li>Multi-brand / multi-entity support</li>
                   <li>Custom reminder templates</li>
-                  <li>API & deeper integrations (2026+)</li>
+                  <li>Dedicated support</li>
                 </ul>
               </div>
               <div class="pricing-cta">
-                <a class="secondary" href="#contact">
-                  Discuss custom setup
-                </a>
+                <a class="secondary" href="#contact">Discuss custom setup</a>
               </div>
             </div>
           </div>
@@ -1164,8 +911,7 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
             <div class="section-eyebrow">FAQ</div>
             <h2 class="section-title">Questions your accountant would ask</h2>
             <p class="section-subtitle">
-              A few of the common conversations we have when someone is considering
-              adding InvoiceChaser beside their existing accounting stack.
+              Common questions when someone is considering adding InvoiceChaser beside their current workflow.
             </p>
           </div>
 
@@ -1173,48 +919,37 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
             <div class="faq-item">
               <div class="faq-q">Do I have to switch away from QuickBooks or Wave?</div>
               <div class="faq-a">
-                No. InvoiceChaser is designed to sit next to your existing system, not
-                replace it. You continue invoicing exactly as you do now—we automate
-                the follow-ups based on your exports or integrations.
+                No. InvoiceChaser sits next to your existing system. Keep invoicing exactly as you do now—we automate follow-ups.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">What if I don’t have a CSV export?</div>
+              <div class="faq-a">
+                No problem. We provide a simple template free of charge. Fill it in once a month and send it—InvoiceChaser does the rest.
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-q">Will my clients know this is automated?</div>
               <div class="faq-a">
-                Reminders are written in natural, human language with tone that fits
-                your brand and client relationships. They read like emails you would
-                actually send yourself, not canned collection notices.
+                Reminders are written in natural language with tone that fits your client relationships. They read like emails you’d actually send.
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-q">Can I control how firm or gentle the reminders are?</div>
+              <div class="faq-q">Can I control how firm or gentle reminders are?</div>
               <div class="faq-a">
-                Yes. You can set tone presets (for example: very friendly, standard,
-                or firm) and adjust by client. We’ll suggest defaults that keep
-                relationships healthy while still getting results.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-q">What if I already have someone making follow-up calls?</div>
-              <div class="faq-a">
-                InvoiceChaser reduces the volume of manual calls by handling the first
-                few touchpoints automatically. Your team can focus on the truly
-                delinquent cases instead of chasing every overdue balance.
+                Yes. Choose a tone preset (friendly, professional, firm) and we align the wording to match.
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-q">Is this a collection agency?</div>
               <div class="faq-a">
-                No. This is a polite, structured reminder system. Our goal is to help
-                you collect sooner with less friction, not damage relationships or
-                escalate to legal collections.
+                No. This is a structured reminder system designed to get you paid sooner without damaging relationships.
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-q">How long does it take to get started?</div>
               <div class="faq-a">
-                For most small businesses, you can go from “first visit” to “live reminders” in days,
-                once we know your file format, tone preferences, and payment instructions.
+                Most customers can go from “first visit” to “live reminders” quickly once we have your invoice file format and payment instructions.
               </div>
             </div>
           </div>
@@ -1226,10 +961,9 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">Get started</div>
-            <h2 class="section-title">Ready to stop chasing invoices manually?</h2>
+            <h2 class="section-title">Want InvoiceChaser set up for your business?</h2>
             <p class="section-subtitle">
-              Prefer a quick conversation first, or have questions about fit, volume, or integrations?
-              Share a bit about your billing world and we’ll follow up with a short, no-pressure walkthrough.
+              Send a quick note. If you need the free template, say so—we’ll send it right over.
             </p>
           </div>
 
@@ -1237,30 +971,20 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
             <div class="contact-card">
               <h3>Talk it through first</h3>
               <p>
-                Contractors and freelancers are busy. If you’d rather sanity-check whether this fits your
-                business before jumping in, reach out and we’ll talk through how you invoice and follow up today.
+                Contractors and freelancers are busy. If you’d rather sanity-check fit before jumping in,
+                reach out and we’ll talk through how you invoice and follow up today.
               </p>
-              <p class="contact-meta">
-                <strong>Email:</strong>
-                <a href="mailto:support@getinvoicechaser.com">support@getinvoicechaser.com</a>
-              </p>
-              <p class="contact-meta">
-                <strong>Location:</strong> Overland Park, Kansas City (serving clients nationwide)
-              </p>
-              <p class="contact-meta">
-                <strong>Best suited for:</strong> Contractors, professional services,
-                and small teams with recurring clients.
-              </p>
+              <p class="contact-meta"><strong>Email:</strong> <a href="mailto:support@getinvoicechaser.com">support@getinvoicechaser.com</a></p>
+              <p class="contact-meta"><strong>Location:</strong> Overland Park, Kansas City (serving clients nationwide)</p>
+              <p class="contact-meta"><strong>Best suited for:</strong> Contractors, professional services, and small teams with recurring clients</p>
             </div>
 
             <div class="contact-form">
               <div class="contact-note">
-                This form now submits directly to our lead system (no copy/paste).
-                If anything blocks the request, it will automatically fall back to an email draft to
+                This form submits directly to our lead system. If anything fails, it will open an email draft to
                 <strong>support@getinvoicechaser.com</strong>.
               </div>
 
-              <!-- IMPORTANT: This is the only functional change to wire the form to your Lead API -->
               <form id="leadForm" onsubmit="submitLead(event)">
                 <div class="form-row">
                   <div class="form-field">
@@ -1268,6 +992,7 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
                     <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
                   </div>
                   <div class="form-field">
+s>
                     <label for="company">Company</label>
                     <input id="company" name="company" type="text" placeholder="Your company" autocomplete="organization" />
                   </div>
@@ -1290,19 +1015,11 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
                 </div>
 
                 <div class="form-field" style="margin-bottom: 0.7rem;">
-                  <label for="message">What’s the biggest headache you want to solve?</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us how you currently chase late invoices and what an ideal setup would look like."
-                    required
-                  ></textarea>
+                  <label for="message">What do you want InvoiceChaser to handle?</label>
+                  <textarea id="message" name="message" placeholder="Example: “I need automated reminders + my Venmo link in the email. Also: I need the free template.”" required></textarea>
                 </div>
 
-                <button id="leadSubmitBtn" type="submit">
-                  Send inquiry
-                </button>
-
+                <button id="leadSubmitBtn" type="submit">Send inquiry</button>
                 <div id="leadStatus" class="status-banner" role="status" aria-live="polite"></div>
               </form>
             </div>
@@ -1325,16 +1042,31 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
   </div>
 
   <script>
-    // Set current year in footer
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Proof card image toggle
+    const proofImg = document.getElementById("proofImg");
+    const tabEmail = document.getElementById("tabEmail");
+    const tabTemplate = document.getElementById("tabTemplate");
+
+    function showProof(which) {
+      tabEmail.classList.remove("active");
+      tabTemplate.classList.remove("active");
+
+      if (which === "template") {
+        tabTemplate.classList.add("active");
+        proofImg.src = "assets/template-example.png";
+        proofImg.alt = "Invoice template example";
+      } else {
+        tabEmail.classList.add("active");
+        proofImg.src = "assets/example-reminder-email.png";
+        proofImg.alt = "Example overdue invoice reminder email";
+      }
+    }
+
     /**
-     * Lead API endpoint:
-     * - Local dev (what you're running now): http://127.0.0.1:5055/lead
-     * - Production: replace this with your deployed API URL, e.g. https://api.getinvoicechaser.com/lead
-     *
-     * NOTE: If index.html is served from GitHub Pages, it cannot reach 127.0.0.1 (that's the visitor's computer).
-     * Local testing works when you're running both locally. Production requires the Lead API deployed publicly.
+     * Lead API endpoint
      */
     const LEAD_API_URL = "https://invoicechaser-lead-api.onrender.com/api/lead";
 
@@ -1356,9 +1088,7 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
 
     function buildMailtoFallback(payload) {
       const to = "support@getinvoicechaser.com";
-      const subject = encodeURIComponent(
-        "New InvoiceChaser inquiry from " + (payload.name || "website visitor")
-      );
+      const subject = encodeURIComponent("New InvoiceChaser inquiry from " + (payload.name || "website visitor"));
 
       const bodyLines = [
         "Name: " + (payload.name || ""),
@@ -1367,7 +1097,7 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
         "Current invoicing system: " + (payload.system || ""),
         "Approx. invoices sent per month: " + (payload.volume || ""),
         "",
-        "Biggest headache they want to solve:",
+        "Message:",
         (payload.message || ""),
         "",
         "---",
@@ -1398,7 +1128,6 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
         message: document.getElementById("message").value.trim()
       };
 
-      // Minimal client-side validation
       if (!payload.name || !payload.email || !payload.message) {
         setStatus("err", "Please fill out Name, Work email, and the message.");
         btn.disabled = false;
@@ -1410,20 +1139,16 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
 
         const res = await fetch(LEAD_API_URL, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
 
         if (!res.ok) {
-          // Try to read JSON error if present
           let detail = "";
           try {
             const data = await res.json();
             if (data && (data.error || data.message)) detail = " (" + (data.error || data.message) + ")";
           } catch (_) {}
-
           throw new Error("Lead API returned " + res.status + detail);
         }
 
@@ -1432,13 +1157,11 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
       } catch (err) {
         console.error("Lead submit failed:", err);
 
-        // Automatic fallback: open an email draft so the lead isn't lost
         setStatus(
           "err",
-          "Couldn’t submit automatically (likely because the Lead API isn’t publicly reachable yet). Opening an email draft as fallback…"
+          "Couldn’t submit automatically. Opening an email draft as fallback…"
         );
 
-        // Give the user a beat to read the message, then fall back
         setTimeout(() => {
           window.location.href = buildMailtoFallback(payload);
         }, 700);
@@ -1449,6 +1172,3 @@ src="https://www.facebook.com/tr?id=1565179907854945&ev=PageView&noscript=1"
   </script>
 </body>
 </html>
-
-
-
