@@ -1214,6 +1214,126 @@
         btn.disabled = false;
       }
     }
+    // ============================================
+    // ANALYTICS EVENT TRACKING
+    // ============================================
+    // Track CTA button clicks
+    document.querySelectorAll('.btn-primary, .btn-secondary, .callout-chip').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        const btnText = this.textContent.trim();
+        gtag('event', 'cta_click', {
+          'button_text': btnText,
+          'button_location': getButtonLocation(this)
+        });
+      });
+    });
+
+    // Track pricing button clicks
+    document.querySelectorAll('.pricing-cta a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const tier = this.closest('.pricing-card').querySelector('.pricing-name').textContent.trim();
+        const price = this.closest('.pricing-card').querySelector('.pricing-price').textContent.trim();
+        gtag('event', 'pricing_click', {
+          'tier': tier,
+          'price': price
+        });
+      });
+    });
+
+    // Track scroll depth
+    let scrollTracked = {
+      'social_proof': false,
+      'pricing': false,
+      'faq': false,
+      'contact': false
+    };
+
+    window.addEventListener('scroll', function() {
+      const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      
+      // Track specific sections
+      trackSectionView('social_proof', document.querySelector('section[style*="background: #ffffff"]'));
+      trackSectionView('pricing', document.getElementById('pricing'));
+      trackSectionView('faq', document.getElementById('faq'));
+      trackSectionView('contact', document.getElementById('contact'));
+      
+      // Track overall scroll depth milestones
+      if (scrollPercent > 25 && !scrollTracked['25_percent']) {
+        gtag('event', 'scroll_depth', { 'depth': '25%' });
+        scrollTracked['25_percent'] = true;
+      }
+      if (scrollPercent > 50 && !scrollTracked['50_percent']) {
+        gtag('event', 'scroll_depth', { 'depth': '50%' });
+        scrollTracked['50_percent'] = true;
+      }
+      if (scrollPercent > 75 && !scrollTracked['75_percent']) {
+        gtag('event', 'scroll_depth', { 'depth': '75%' });
+        scrollTracked['75_percent'] = true;
+      }
+      if (scrollPercent > 90 && !scrollTracked['90_percent']) {
+        gtag('event', 'scroll_depth', { 'depth': '90%' });
+        scrollTracked['90_percent'] = true;
+      }
+    });
+
+    function trackSectionView(name, element) {
+      if (!element || scrollTracked[name]) return;
+      
+      const rect = element.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      if (inView) {
+        gtag('event', 'section_view', {
+          'section_name': name
+        });
+        scrollTracked[name] = true;
+      }
+    }
+
+    // Track form interactions
+    let formInteractionTracked = false;
+    document.querySelectorAll('#leadForm input, #leadForm textarea').forEach(function(field) {
+      field.addEventListener('focus', function() {
+        if (!formInteractionTracked) {
+          gtag('event', 'form_start', {
+            'form_name': 'contact_form'
+          });
+          formInteractionTracked = true;
+        }
+      });
+    });
+
+    // Track time on page (send at 10s, 30s, 60s, 120s)
+    let timeTracked = {};
+    [10, 30, 60, 120].forEach(function(seconds) {
+      setTimeout(function() {
+        gtag('event', 'time_on_page', {
+          'seconds': seconds
+        });
+      }, seconds * 1000);
+    });
+
+    // Helper function to identify button location
+    function getButtonLocation(element) {
+      if (element.closest('.hero')) return 'hero';
+      if (element.closest('.callout')) return 'callout';
+      if (element.closest('#pricing')) return 'pricing';
+      if (element.closest('#contact')) return 'contact';
+      return 'unknown';
+    }
+
+    // Track outbound links (pricing mailto)
+    document.querySelectorAll('a[href^="mailto"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        gtag('event', 'mailto_click', {
+          'link_text': this.textContent.trim()
+        });
+      });
+    });
   </script>
 </body>
 </html>
+  </script>
+</body>
+</html>
+
