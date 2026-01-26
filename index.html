@@ -72,7 +72,6 @@
       padding: 0 1.25rem;
     }
 
-    /* --- Top nav --- */
     header {
       position: sticky;
       top: 0;
@@ -120,11 +119,13 @@
 
     .nav-cta span { color: #bfdbfe; font-weight: 500; }
 
-    /* --- Hero --- */
     .hero {
-      background: radial-gradient(circle at top left, #e0edff, #f5f7fb);
-      padding: 3.5rem 0 3rem;
-      border-bottom: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at top left, #e0edff, #f5f7fb);
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: visible;
+  padding-bottom: 5rem;
+}
     }
 
     .hero-inner {
@@ -194,7 +195,6 @@
     .hero-footnote { font-size: 0.82rem; color: var(--text-muted); }
     .hero-footnote strong { color: var(--navy-light); }
 
-    /* --- Hero callout (No CSV) --- */
     .callout {
       margin-top: 1.1rem;
       background: #ffffff;
@@ -245,16 +245,15 @@
       border: none;
     }
 
-    /* --- Proof card on right --- */
     .proof-card {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 1.05rem 1.05rem 1.0rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      position: sticky;
-      top: 88px;
-    }
+  background: var(--white);
+  border-radius: 18px;
+  padding: 1.05rem 1.05rem 1.0rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  position: relative;
+  top: 0;
+}
 
     .proof-top {
       display: flex;
@@ -318,7 +317,6 @@
 
     .proof-tip strong { color: var(--navy-light); }
 
-    /* --- Sections --- */
     section { padding: 3rem 0; }
 
     .section-header { text-align: left; margin-bottom: 1.75rem; }
@@ -332,7 +330,6 @@
     .section-title { font-size: 1.4rem; color: var(--navy); margin-bottom: 0.3rem; }
     .section-subtitle { color: var(--text-muted); font-size: 0.9rem; max-width: 34rem; }
 
-    /* Pain section */
     .pain-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -352,7 +349,6 @@
     }
     .pain-card p { font-size: 0.84rem; color: var(--text-muted); }
 
-    /* How it works */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -382,7 +378,6 @@
     }
     .step-text { font-size: 0.86rem; color: var(--text-muted); }
 
-    /* Features */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -408,7 +403,6 @@
     .feature-title { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--navy); }
     .feature-text { font-size: 0.84rem; color: var(--text-muted); }
 
-    /* Pricing */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -467,7 +461,6 @@
     .pricing-cta .primary { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #eff6ff; }
     .pricing-cta .secondary { background: #f9fafb; border: 1px solid #e5e7eb; color: var(--navy); }
 
-    /* FAQ */
     .faq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
     .faq-item {
       background: var(--white);
@@ -478,7 +471,6 @@
     .faq-q { font-size: 0.9rem; font-weight: 900; color: var(--navy); margin-bottom: 0.25rem; }
     .faq-a { font-size: 0.84rem; color: var(--text-muted); }
 
-    /* Contact */
     .contact-layout {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
@@ -562,7 +554,6 @@
       color: #7f1d1d;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--border-subtle);
       padding: 1.4rem 0;
@@ -581,12 +572,12 @@
     .footer-links { display: flex; gap: 0.9rem; }
     .footer-links a { color: var(--text-muted); }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: minmax(0, 1fr); }
       .proof-card { position: relative; top: 0; }
       .steps-grid, .features-grid, .pricing-grid, .faq-grid, .pain-grid { grid-template-columns: minmax(0, 1fr); }
       .contact-layout { grid-template-columns: minmax(0, 1fr); }
+      section[style*="grid-template-columns: minmax(0, 1.2fr)"] > div > div { grid-template-columns: minmax(0, 1fr) !important; }
     }
     @media (max-width: 640px) {
       .nav-links { display: none; }
@@ -601,7 +592,6 @@
 
 <body>
   <div class="page">
-    <!-- NAVBAR -->
     <header>
       <div class="container nav">
         <div class="nav-left">
@@ -621,7 +611,6 @@
       </div>
     </header>
 
-    <!-- HERO -->
     <main>
       <section class="hero">
         <div class="container hero-inner">
@@ -636,8 +625,8 @@
             </h1>
 
             <p class="hero-subtitle">
-              InvoiceChaser automatically emails overdue reminders with your payment instructions
-              (Venmo, Zelle, ACH, card link, website — whatever you use). You keep billing the way you do today.
+              InvoiceChaser automatically emails overdue reminders with your payment links
+              (ACH, Stripe, payment portal—or Venmo/Zelle if that's easier). You keep billing the way you do today.
             </p>
 
             <div class="hero-actions">
@@ -649,18 +638,17 @@
               </button>
             </div>
 
-            <!-- No CSV callout (this is the "must-see" box) -->
             <div class="callout" role="note" aria-label="No CSV callout">
               <div class="callout-title">No CSV? No problem.</div>
               <div class="callout-text">
-                If you don’t export from QuickBooks/Wave, we’ll give you a simple template <strong>free of charge</strong>.
+                If you don't export from QuickBooks/Wave, we'll give you a simple template <strong>free of charge</strong>.
                 Fill it in once a month and send it — InvoiceChaser does the rest.
               </div>
               <div class="callout-actions">
                 <button class="callout-chip primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'});">
                   Start getting paid faster
                 </button>
-                <button class="callout-chip" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+                <button class="callout-chip" onclick="window.location.href='mailto:support@getinvoicechaser.com?subject=Free%20Invoice%20Template%20Request&body=Hi%2C%0A%0APlease%20send%20me%20the%20free%20invoice%20template.%0A%0AName%3A%0ACompany%3A%0AEmail%3A'">
                   Request the free template
                 </button>
               </div>
@@ -672,7 +660,6 @@
             </p>
           </div>
 
-          <!-- Proof card: show actual output -->
           <aside class="proof-card" aria-label="Example output">
             <div class="proof-top">
               <div>
@@ -704,14 +691,63 @@
         </div>
       </section>
 
-      <!-- PAIN SECTION -->
-      <section>
+   <section style="padding: 2rem 0 1.5rem; background: #ffffff; border-bottom: 1px solid var(--border-subtle); position: relative; z-index: 10;">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); gap: 2rem; align-items: center;">
+            
+            <div style="background: linear-gradient(135deg, #eff6ff, #dbeafe); border-left: 4px solid #2563eb; border-radius: 12px; padding: 1.2rem 1.3rem;">
+              <p style="font-size: 0.92rem; color: var(--navy); line-height: 1.5; margin-bottom: 0.6rem; font-style: italic;">
+                "Most of my small business clients lose 15-20 hours a month chasing late payments. The ones who automate follow-up see that time go to zero—and their DSO drops by 30%."
+              </p>
+              <p style="font-size:0.8rem; color: var(--text-muted); font-weight: 700;">
+— Joseph Underwood, CPA
+</p>
+<p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem;">
+10 years handling small business tax returns
+</p>
+</div>
+        <div style="display: flex; flex-direction: column; gap: 0.9rem;">
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #22c55e, #16a34a); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; flex-shrink: 0;">
+              ✓
+            </div>
+            <div>
+              <div style="font-size: 0.9rem; font-weight: 800; color: var(--navy);">Fully operational</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">From purchase to first reminder in under 10 minutes</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6, #2563eb); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; flex-shrink: 0;">
+              ⚡
+            </div>
+            <div>
+              <div style="font-size: 0.9rem; font-weight: 800; color: var(--navy);">Built by contractors, for contractors</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Created to solve the invoice chase problem we lived through</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; flex-shrink: 0;">
+              🔒
+            </div>
+            <div>
+              <div style="font-size: 0.9rem; font-weight: 800; color: var(--navy);">Your data stays yours</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Client lists never shared, stored securely, deleted on request</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section>
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">The problem</div>
             <h2 class="section-title">Late invoices quietly crush your time and cash flow</h2>
             <p class="section-subtitle">
-              You didn’t start your business to chase people who already owe you money. But every overdue invoice
+              You didn't start your business to chase people who already owe you money. But every overdue invoice
               steals time, energy, and focus from the work that actually grows your business.
             </p>
           </div>
@@ -726,8 +762,8 @@
               <p>Some people are too nice. Others are too busy. Either way, chasing money is uncomfortable.</p>
             </div>
             <div class="pain-card">
-              <h3>Clients ignore “just checking in” emails</h3>
-              <p>Generic reminders don’t create urgency or make paying easy. Clear payment instructions do.</p>
+              <h3>Clients ignore "just checking in" emails</h3>
+              <p>Generic reminders don't create urgency or make paying easy. Clear payment instructions do.</p>
             </div>
             <div class="pain-card">
               <h3>Cash flow delays stall everything</h3>
@@ -737,7 +773,6 @@
         </div>
       </section>
 
-      <!-- HOW IT WORKS -->
       <section id="how-it-works">
         <div class="container">
           <div class="section-header">
@@ -753,12 +788,12 @@
               <div class="step-number">1</div>
               <div class="step-title">Send invoices as usual</div>
               <p class="step-text">
-                Use QuickBooks, Wave, or your own process. If you don’t export invoices, we’ll provide a simple template.
+                Use QuickBooks, Wave, or your own process. If you don't export invoices, we'll provide a simple template.
               </p>
             </div>
             <div class="step-card">
               <div class="step-number">2</div>
-              <div class="step-title">We detect what’s overdue</div>
+              <div class="step-title">We detect what's overdue</div>
               <p class="step-text">
                 InvoiceChaser standardizes invoice data, calculates aging, and selects the right reminder stage based on your rules.
               </p>
@@ -774,14 +809,13 @@
         </div>
       </section>
 
-      <!-- FEATURES -->
       <section id="features">
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">Key capabilities</div>
             <h2 class="section-title">Built for contractors, freelancers, and small teams</h2>
             <p class="section-subtitle">
-              You don’t need enterprise software. You need something that fits beside your current tools and quietly handles follow-up.
+              You don't need enterprise software. You need something that fits beside your current tools and quietly handles follow-up.
             </p>
           </div>
 
@@ -818,21 +852,20 @@
               <div class="feature-tag">Reporting</div>
               <div class="feature-title">Aging & follow-up logs</div>
               <p class="feature-text">
-                Automatically generated aging reports and sent-logs make it easy to answer “Who did we remind, when, and how?”
+                Automatically generated aging reports and sent-logs make it easy to answer "Who did we remind, when, and how?"
               </p>
             </div>
             <div class="feature-card">
               <div class="feature-tag">Reliability</div>
               <div class="feature-title">Runs quietly in the background</div>
               <p class="feature-text">
-                Once configured, InvoiceChaser runs on a schedule and sends reminders—so you don’t have to.
+                Once configured, InvoiceChaser runs on a schedule and sends reminders—so you don't have to.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PRICING -->
       <section id="pricing">
         <div class="container">
           <div class="section-header">
@@ -855,7 +888,14 @@
                   <li>QuickBooks or Wave exports</li>
                   <li>Single reminder tone preset</li>
                   <li>Basic aging report</li>
+                  <li>Free invoice template included</li>
                 </ul>
+                <div style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid #e5e7eb;">
+                  <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;">
+                    <strong style="color: var(--navy);">30-day money-back guarantee</strong><br/>
+                    If we don't help you recover at least one invoice, we'll refund you. Cancel anytime, no questions asked.
+                  </p>
+                </div>
               </div>
               <div class="pricing-cta">
                 <a class="primary" href="https://buy.stripe.com/dRm5kD6X9g8zgnhcuz5kk01" target="_blank" rel="noopener noreferrer">
@@ -875,7 +915,14 @@
                   <li>Per-client tone presets</li>
                   <li>Full aging & sent-log reports</li>
                   <li>Priority onboard support</li>
+                  <li>Free invoice template included</li>
                 </ul>
+                <div style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid #e5e7eb;">
+                  <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;">
+                    <strong style="color: var(--navy);">30-day money-back guarantee</strong><br/>
+                    If we don't help you recover at least one invoice, we'll refund you. Cancel anytime, no questions asked.
+                  </p>
+                </div>
               </div>
               <div class="pricing-cta">
                 <a class="primary" href="https://buy.stripe.com/eVq7sL81d7C33Avbqv5kk00" target="_blank" rel="noopener noreferrer">
@@ -894,17 +941,24 @@
                   <li>Multi-brand / multi-entity support</li>
                   <li>Custom reminder templates</li>
                   <li>Dedicated support</li>
+                  <li>API access available</li>
                 </ul>
+                <div style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid #e5e7eb;">
+                  <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;">
+                    Email us to discuss your needs. We typically respond within 24 hours.
+                  </p>
+                </div>
               </div>
               <div class="pricing-cta">
-                <a class="secondary" href="#contact">Discuss custom setup</a>
+                <a class="secondary" href="mailto:support@getinvoicechaser.com?subject=Custom%20Setup%20Inquiry&body=Hi%2C%0A%0AI'd%20like%20to%20discuss%20custom%20pricing%20for%20InvoiceChaser.%0A%0AMy%20business%3A%0AMonthly%20invoice%20volume%3A%0ASpecial%20requirements%3A">
+                  Email for custom pricing
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- FAQ -->
       <section id="faq">
         <div class="container">
           <div class="section-header">
@@ -923,7 +977,7 @@
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-q">What if I don’t have a CSV export?</div>
+              <div class="faq-q">What if I don't have a CSV export?</div>
               <div class="faq-a">
                 No problem. We provide a simple template free of charge. Fill it in once a month and send it—InvoiceChaser does the rest.
               </div>
@@ -931,7 +985,7 @@
             <div class="faq-item">
               <div class="faq-q">Will my clients know this is automated?</div>
               <div class="faq-a">
-                Reminders are written in natural language with tone that fits your client relationships. They read like emails you’d actually send.
+                Reminders are written in natural language with tone that fits your client relationships. They read like emails you'd actually send.
               </div>
             </div>
             <div class="faq-item">
@@ -949,21 +1003,19 @@
             <div class="faq-item">
               <div class="faq-q">How long does it take to get started?</div>
               <div class="faq-a">
-                Most customers can go from “first visit” to “live reminders” quickly once we have your invoice file format and payment instructions.
+                Most customers can go from "first visit" to "live reminders" quickly once we have your invoice file format and payment instructions.
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- CONTACT -->
       <section id="contact">
         <div class="container">
           <div class="section-header">
             <div class="section-eyebrow">Get started</div>
             <h2 class="section-title">Want InvoiceChaser set up for your business?</h2>
             <p class="section-subtitle">
-              Send a quick note. If you need the free template, say so—we’ll send it right over.
+              Send a quick note. If you need the free template, say so—we'll send it right over.
             </p>
           </div>
 
@@ -971,8 +1023,8 @@
             <div class="contact-card">
               <h3>Talk it through first</h3>
               <p>
-                Contractors and freelancers are busy. If you’d rather sanity-check fit before jumping in,
-                reach out and we’ll talk through how you invoice and follow up today.
+                Contractors and freelancers are busy. If you'd rather sanity-check fit before jumping in,
+                reach out and we'll talk through how you invoice and follow up today.
               </p>
               <p class="contact-meta"><strong>Email:</strong> <a href="mailto:support@getinvoicechaser.com">support@getinvoicechaser.com</a></p>
               <p class="contact-meta"><strong>Location:</strong> Overland Park, Kansas City (serving clients nationwide)</p>
@@ -992,7 +1044,6 @@
                     <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
                   </div>
                   <div class="form-field">
-s>
                     <label for="company">Company</label>
                     <input id="company" name="company" type="text" placeholder="Your company" autocomplete="organization" />
                   </div>
@@ -1015,8 +1066,8 @@ s>
                 </div>
 
                 <div class="form-field" style="margin-bottom: 0.7rem;">
-                  <label for="message">What do you want InvoiceChaser to handle?</label>
-                  <textarea id="message" name="message" placeholder="Example: “I need automated reminders + my Venmo link in the email. Also: I need the free template.”" required></textarea>
+                  <label for="message">What's the biggest headache you want to solve?</label>
+                  <textarea id="message" name="message" placeholder="Tell us how you currently chase late invoices and what an ideal setup would look like." required></textarea>
                 </div>
 
                 <button id="leadSubmitBtn" type="submit">Send inquiry</button>
@@ -1028,7 +1079,6 @@ s>
       </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
       <div class="container footer-inner">
         <div>© <span id="year"></span> InvoiceChaser. All rights reserved.</div>
@@ -1042,10 +1092,8 @@ s>
   </div>
 
   <script>
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Proof card image toggle
     const proofImg = document.getElementById("proofImg");
     const tabEmail = document.getElementById("tabEmail");
     const tabTemplate = document.getElementById("tabTemplate");
@@ -1065,9 +1113,6 @@ s>
       }
     }
 
-    /**
-     * Lead API endpoint
-     */
     const LEAD_API_URL = "https://invoicechaser-lead-api.onrender.com/api/lead";
 
     function setStatus(type, message) {
@@ -1152,14 +1197,14 @@ s>
           throw new Error("Lead API returned " + res.status + detail);
         }
 
-        setStatus("ok", "✅ Submitted. We’ll follow up shortly.");
+        setStatus("ok", "✅ Submitted. We'll follow up shortly.");
         document.getElementById("leadForm").reset();
       } catch (err) {
         console.error("Lead submit failed:", err);
 
         setStatus(
           "err",
-          "Couldn’t submit automatically. Opening an email draft as fallback…"
+          "Couldn't submit automatically. Opening an email draft as fallback…"
         );
 
         setTimeout(() => {
